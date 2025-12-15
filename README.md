@@ -1,6 +1,7 @@
 # Rick & Morty Characters Explorer
+Live demo: [https://rnm-cyberr-frontend.vercel.app/](https://rnm-cyberr-frontend.vercel.app/)
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), featuring a searchable, paginated list of Rick & Morty characters. It uses Apollo Client for GraphQL data fetching and Heroui for UI components.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), featuring a searchable, paginated list of Rick & Morty characters. It uses Apollo Client for GraphQL data fetching and HeroUI for UI components.
 
 ## Features
 
@@ -34,11 +35,9 @@ bun install
 bun dev
 ```
 
-Open http://localhost:3000
- in your browser to see the app.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-You can start editing the page by modifying app/page.tsx. Changes are hot-reloaded automatically.
-
+You can start editing the page by modifying `app/page.tsx`. Changes are hot-reloaded automatically.
 ## Testing
 Playwright is configured as a dev dependency (`@playwright/test`). To run tests:
 ```
