@@ -28,7 +28,7 @@ export default function Home() {
   }, [search]);
 
   const handleClose = useCallback(() => {
-    return () => setSelected(null);
+    setSelected(null);
   }, []);
 
   const characters = data?.characters.results ?? [];
@@ -133,7 +133,7 @@ export default function Home() {
         </section>
       </section>
 
-      <CharacterDrawer character={selected} onClose={handleClose()} />
+      <CharacterDrawer character={selected} onClose={() => handleClose()} />
     </main>
   );
 }
