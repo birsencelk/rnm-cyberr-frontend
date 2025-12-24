@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Character } from "@/graphql/queries";
 import { Modal, ModalContent, ModalHeader, ModalBody } from "@heroui/react";
