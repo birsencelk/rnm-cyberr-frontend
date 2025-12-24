@@ -5,6 +5,7 @@ import { useQuery } from "@apollo/client/react";
 import { CHARACTERS_QUERY, CharactersData, Character } from "@/graphql/queries";
 import { Input, Button, Spinner } from "@heroui/react";
 import CharacterDrawer from "./components/CharactersDrawer";
+import SearchIcon from "./components/SearchIcon";
 
 const DEBOUNCE_MS = 500;
 const FIRST_PAGE = 1;
@@ -49,16 +50,26 @@ export default function Home() {
               Search and explore characters from the Rick and Morty universe.
             </p>
           </div>
-          <Input
-            aria-label="Search characters"
-            placeholder="Search by name..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full md:w-80"
-            classNames={{
-              input: "text-emerald-600 placeholder:text-emerald-600",
-            }}
-          />
+          <div className="p-2 border border-emerald-700 rounded-xl">
+            <Input
+              isClearable={search.length > 0}
+              onClear={() => setSearch("")}
+              classNames={{
+                input: ["text-emerald-600 placeholder:text-emerald-600 px-3"],
+                innerWrapper: "flex items-center gap-2",
+                clearButton: [
+                  "text-emerald-600 pointer-events-auto",
+                  search.length > 0 ? "visible" : "invisible",
+                ],
+              }}
+              placeholder="Search characters..."
+              startContent={
+                <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none shrink-0" />
+              }
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </header>
 
         <section
